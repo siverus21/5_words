@@ -4,6 +4,10 @@ body{
     background-color: #2f2f32;
 }
 
+.hide{
+    display: none;
+}
+
 .wrapper{
     display: flex;
 
@@ -41,10 +45,29 @@ body{
         background-color: #fff;
         border: 1px solid gray;
         border-radius: $border-radius;
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
         cursor: pointer;
         position: relative;
+        transition: background-color 0.3s ease;
+
+        &:hover{
+            background-color: rgba(0,0,0,0.1); 
+            
+            .wrapper__key{
+                color: white;
+            }
+        }
+
+        &_input{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        &_accept{
+            background-color: green;
+            margin-left: 10px;
+        }
     }
 
     &__key{
@@ -57,5 +80,20 @@ body{
         font-size: 24px;
         color: #2f2f32;
         font-weight: 700;
+    }
+
+    &__input{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    &__container{
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

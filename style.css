@@ -2,6 +2,10 @@ body {
   background-color: #2f2f32;
 }
 
+.hide {
+  display: none;
+}
+
 .wrapper {
   display: flex;
 }
@@ -35,10 +39,25 @@ body {
   background-color: #fff;
   border: 1px solid gray;
   border-radius: 10px;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
   position: relative;
+  transition: background-color 0.3s ease;
+}
+.wrapper__box:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.wrapper__box:hover .wrapper__key {
+  color: white;
+}
+.wrapper__box_input {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.wrapper__box_accept {
+  background-color: green;
+  margin-left: 10px;
 }
 .wrapper__key {
   position: absolute;
@@ -50,4 +69,17 @@ body {
   font-size: 24px;
   color: #2f2f32;
   font-weight: 700;
+}
+.wrapper__input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.wrapper__container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }/*# sourceMappingURL=style.css.map */
