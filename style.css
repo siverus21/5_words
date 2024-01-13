@@ -56,8 +56,20 @@ body {
   margin-right: 10px;
 }
 .wrapper__box_accept {
-  background-color: green;
+  position: absolute;
+  right: -70px;
+  top: 20px;
+  background-color: #008000;
   margin-left: 10px;
+}
+.wrapper__box_accept:hover {
+  background-color: #228b22;
+}
+.wrapper__box_accept svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .wrapper__key {
   position: absolute;
@@ -76,6 +88,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
+  margin-top: 20px;
 }
 .wrapper__container {
   position: absolute;
