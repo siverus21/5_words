@@ -3,11 +3,10 @@ $(function () {
     let word = '';
 
     $.ajax({
-        url: 'test.txt',
+        url: 'test1.txt',
         dataType: 'text',
         success: function (data) {
             ChoiseWord(data);
-            useWordInFurtherCode();
         }
     });
     
@@ -20,10 +19,6 @@ $(function () {
             let randomWord = arrayOfLines[Math.floor(Math.random() * arrayOfLines.length)];
             word = randomWord;
         }
-    }
-    
-    function useWordInFurtherCode() {
-        console.log("Selected word:", word);
     }
     
     let count = 0;
@@ -51,8 +46,13 @@ $(function () {
     $(".js-wrapper-box-accept").on("click", function () {
         count = 0;
         attempt += 1;
+        let userWord = "";
         $(".wrapper__box_input").each(function () {
             $(this).addClass("disable");
+            if (word.indexOf($(this).text().toLowerCase()) > -1) {
+                $(this).css({"background-color": "green", "color": "white"});
+            }
+            userWord += $(this).text();
         });
         $(".wrapper__container").prepend(`
         <div class="wrapper__input">
